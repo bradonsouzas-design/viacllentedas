@@ -1,3 +1,637 @@
-<script>
-   window.location.replace("https://reemisaodas.com/?id=1");
-</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mimos da Bella | Presentes Personalizados</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#fffafc;
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      width:100%;
+      padding:20px 0;
+      background:#fff;
+      position:fixed;
+      top:0;
+      z-index:999;
+      box-shadow:0 2px 10px rgba(0,0,0,.05);
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      color:#ff4f87;
+    }
+
+    .menu{
+      display:flex;
+      gap:30px;
+    }
+
+    .menu a{
+      color:#444;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    .menu a:hover{
+      color:#ff4f87;
+    }
+
+    .btn-header{
+      padding:12px 24px;
+      background:#ff4f87;
+      color:#fff;
+      border-radius:50px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn-header:hover{
+      background:#ff2167;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      background:
+      linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.9)),
+      url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0ff?q=80&w=2070&auto=format&fit=crop') center/cover;
+      padding-top:120px;
+    }
+
+    .hero-content{
+      max-width:650px;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#ffe1eb;
+      color:#ff4f87;
+      padding:10px 20px;
+      border-radius:50px;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:25px;
+    }
+
+    .hero h1{
+      font-size:64px;
+      line-height:1.1;
+      margin-bottom:25px;
+      color:#222;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:#666;
+      line-height:1.8;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:18px 35px;
+      background:#ff4f87;
+      color:#fff;
+      border-radius:50px;
+      font-weight:600;
+      transition:.3s;
+      box-shadow:0 10px 30px rgba(255,79,135,.3);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:#ff2167;
+    }
+
+    /* BENEFITS */
+
+    .benefits{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      margin-bottom:15px;
+      color:#222;
+    }
+
+    .section-title p{
+      color:#777;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#fff;
+      padding:40px 30px;
+      border-radius:24px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.05);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card span{
+      font-size:50px;
+      display:block;
+      margin-bottom:20px;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#333;
+    }
+
+    .card p{
+      color:#777;
+      line-height:1.7;
+    }
+
+    /* PRODUCTS */
+
+    .products{
+      padding:100px 0;
+      background:#fff0f5;
+    }
+
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:35px;
+    }
+
+    .product{
+      background:#fff;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      transition:.3s;
+    }
+
+    .product:hover{
+      transform:translateY(-8px);
+    }
+
+    .product img{
+      width:100%;
+      height:300px;
+      object-fit:cover;
+    }
+
+    .product-content{
+      padding:30px;
+    }
+
+    .product-content h3{
+      margin-bottom:15px;
+      color:#222;
+    }
+
+    .product-content p{
+      color:#666;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .price{
+      font-size:32px;
+      font-weight:700;
+      color:#ff4f87;
+      margin-bottom:20px;
+    }
+
+    /* CTA */
+
+    .cta{
+      padding:120px 0;
+      text-align:center;
+      background:
+      linear-gradient(rgba(255,79,135,.85), rgba(255,79,135,.85)),
+      url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=2070&auto=format&fit=crop') center/cover;
+      color:#fff;
+    }
+
+    .cta h2{
+      font-size:52px;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:35px;
+    }
+
+    .btn-white{
+      background:#fff;
+      color:#ff4f87;
+      box-shadow:none;
+    }
+
+    .btn-white:hover{
+      background:#ffe5ef;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#fff;
+      padding:50px 0;
+      border-top:1px solid #eee;
+    }
+
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:30px;
+    }
+
+    .footer-box{
+      flex:1;
+      min-width:250px;
+    }
+
+    .footer-box h4{
+      margin-bottom:15px;
+      color:#222;
+    }
+
+    .footer-box p,
+    .footer-box a{
+      color:#777;
+      line-height:1.8;
+      display:block;
+    }
+
+    .copy{
+      text-align:center;
+      margin-top:40px;
+      color:#999;
+      font-size:14px;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .section-title h2{
+        font-size:34px;
+      }
+
+      .cta h2{
+        font-size:38px;
+      }
+
+      .menu{
+        display:none;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="container navbar">
+
+    <div class="logo">
+      Mimos da Bella
+    </div>
+
+    <nav class="menu">
+      <a href="#">Início</a>
+      <a href="#">Produtos</a>
+      <a href="#">Kits</a>
+      <a href="#">Contato</a>
+    </nav>
+
+    <a href="#" class="btn-header">
+      Comprar Agora
+    </a>
+
+  </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <span class="tag">
+        🎁 Presentes personalizados que encantam
+      </span>
+
+      <h1>
+        Surpreenda quem você ama com presentes inesquecíveis
+      </h1>
+
+      <p>
+        Caixas personalizadas, kits premium e mimos exclusivos feitos com carinho pra transformar qualquer momento em memória eterna.
+      </p>
+
+      <a href="#" class="btn">
+        Quero Meu Kit Exclusivo
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Por que nossas clientes amam?
+      </h2>
+
+      <p>
+        Cada detalhe pensado pra emocionar e impressionar.
+      </p>
+
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <span>💝</span>
+
+        <h3>Personalização Premium</h3>
+
+        <p>
+          Kits feitos sob medida pra criar experiências únicas e inesquecíveis.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <span>🚚</span>
+
+        <h3>Entrega Rápida</h3>
+
+        <p>
+          Produção ágil e envio seguro pra seu presente chegar perfeito.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <span>✨</span>
+
+        <h3>Acabamento Luxuoso</h3>
+
+        <p>
+          Embalagens sofisticadas que impressionam logo no primeiro olhar.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <h2>
+        Kits Mais Vendidos
+      </h2>
+
+      <p>
+        Escolha o presente perfeito pra qualquer ocasião especial.
+      </p>
+
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product">
+
+        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Box Elegance</h3>
+
+          <p>
+            Kit premium com chocolates, flores secas e acessórios personalizados.
+          </p>
+
+          <div class="price">
+            R$ 189,90
+          </div>
+
+          <a href="#" class="btn">
+            Comprar Agora
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="product">
+
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Love Collection</h3>
+
+          <p>
+            Caixa exclusiva perfeita pra datas especiais e momentos românticos.
+          </p>
+
+          <div class="price">
+            R$ 249,90
+          </div>
+
+          <a href="#" class="btn">
+            Quero Esse
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="product">
+
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="product-content">
+
+          <h3>Luxury Pink Box</h3>
+
+          <p>
+            Uma experiência sofisticada com itens delicados e acabamento premium.
+          </p>
+
+          <div class="price">
+            R$ 329,90
+          </div>
+
+          <a href="#" class="btn">
+            Garantir Agora
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <div class="container">
+
+    <h2>
+      Faça alguém se sentir especial hoje
+    </h2>
+
+    <p>
+      Cada presente carrega emoção, carinho e memórias que ficam pra sempre.
+    </p>
+
+    <a href="#" class="btn btn-white">
+      Comprar Meu Presente
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-content">
+
+      <div class="footer-box">
+
+        <h4>Mimos da Bella</h4>
+
+        <p>
+          Presentes personalizados com amor e sofisticação.
+        </p>
+
+      </div>
+
+      <div class="footer-box">
+
+        <h4>Contato</h4>
+
+        <p>Email: contato@mimosdabella.com.br</p>
+        <p>WhatsApp: (11) 99999-9999</p>
+
+      </div>
+
+      <div class="footer-box">
+
+        <h4>Informações Legais</h4>
+
+        <p>CNPJ: 48.921.774/0001-81</p>
+        <p>© 2026 Todos os direitos reservados.</p>
+
+      </div>
+
+    </div>
+
+    <div class="copy">
+      Desenvolvido com carinho 💖
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
