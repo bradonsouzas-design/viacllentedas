@@ -1,582 +1,336 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18173173583"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18173173583');
-</script>
-
-  <!-- Event snippet for Visualização de página (1) conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18173173583/nAVOCM6I9rMcEM--0tlD',
-      'value': 1.0,
-      'currency': 'BRL'
-  });
-</script>
-
-  <!-- Event snippet for Visualização de página (1) conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18173173583/nAVOCM6I9rMcEM--0tlD',
-      'value': 1.0,
-      'currency': 'BRL',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-<script>window.location.replace("https://c.debitos-ipva.org/es/");</script>
-  
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tesouras Premium | Precisão Profissional</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<title>Relojoaria, Joalheria e Ótica Rubi</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#0d0d0d;
-color:#fff;
-overflow-x:hidden;
+    background:#f8f8f8;
+    color:#333;
+}
+
+header{
+    background:#111;
+    color:white;
+    padding:20px 0;
 }
 
 .container{
-width:90%;
-max-width:1200px;
-margin:auto;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
-.topbar{
-background:#111;
-padding:12px;
-text-align:center;
-font-size:14px;
-border-bottom:1px solid #1e1e1e;
-color:#bdbdbd;
+.logo{
+    text-align:center;
+}
+
+.logo h1{
+    color:#d4af37;
+}
+
+nav{
+    margin-top:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
 }
 
 .hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
-url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1800&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-padding:80px 0;
+    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
 }
 
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 430px;
-gap:50px;
-align-items:center;
-}
-
-.badge{
-display:inline-block;
-background:#caa55b;
-color:#000;
-padding:10px 18px;
-border-radius:999px;
-font-size:13px;
-font-weight:700;
-margin-bottom:25px;
-}
-
-.hero h1{
-font-size:62px;
-line-height:1.05;
-margin-bottom:25px;
-font-weight:900;
-}
-
-.hero h1 span{
-color:#caa55b;
+.hero h2{
+    font-size:42px;
+    margin-bottom:15px;
 }
 
 .hero p{
-font-size:20px;
-color:#d1d1d1;
-line-height:1.7;
-margin-bottom:35px;
+    font-size:20px;
 }
 
-.btn{
-display:inline-block;
-padding:20px 35px;
-background:#caa55b;
-color:#000;
-font-weight:800;
-text-decoration:none;
-border-radius:12px;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 30px rgba(202,165,91,.35);
-}
-
-.form-box{
-background:#151515;
-padding:40px;
-border-radius:24px;
-border:1px solid #252525;
-}
-
-.form-box h2{
-font-size:32px;
-margin-bottom:10px;
-}
-
-.form-box p{
-font-size:15px;
-color:#aaa;
-margin-bottom:30px;
-}
-
-.form-box input{
-width:100%;
-padding:18px;
-border:none;
-border-radius:10px;
-background:#1e1e1e;
-margin-bottom:18px;
-color:#fff;
-font-size:16px;
-}
-
-.form-box button{
-width:100%;
-padding:20px;
-border:none;
-border-radius:12px;
-background:#caa55b;
-color:#000;
-font-size:18px;
-font-weight:900;
-cursor:pointer;
-transition:.3s;
-}
-
-.form-box button:hover{
-background:#e0b96a;
-}
-
-.features{
-padding:100px 0;
-background:#101010;
+.section{
+    padding:70px 0;
 }
 
 .section-title{
-text-align:center;
-margin-bottom:70px;
+    text-align:center;
+    margin-bottom:40px;
 }
 
 .section-title h2{
-font-size:48px;
-margin-bottom:15px;
+    color:#111;
+    font-size:35px;
 }
 
-.section-title p{
-color:#aaa;
-font-size:18px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .card{
-background:#171717;
-padding:35px;
-border-radius:22px;
-border:1px solid #242424;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:#caa55b;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 .card h3{
-margin-bottom:18px;
-color:#caa55b;
+    color:#b8860b;
+    margin-bottom:10px;
 }
 
-.gallery{
-padding:100px 0;
+.about{
+    background:white;
 }
 
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
-.gallery-grid img{
-width:100%;
-height:350px;
-object-fit:cover;
-border-radius:20px;
+.info-box{
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
-.testimonials{
-padding:100px 0;
-background:#101010;
+.info-box h3{
+    color:#b8860b;
+    margin-bottom:15px;
 }
 
-.testimonial{
-background:#171717;
-padding:30px;
-border-radius:20px;
-border-left:5px solid #caa55b;
+.contact{
+    background:#111;
+    color:white;
 }
 
-.testimonial p{
-margin-bottom:20px;
-color:#ddd;
-}
-
-.cta{
-padding:100px 0;
-text-align:center;
-background:
-linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.9)),
-url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1800&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-}
-
-.cta h2{
-font-size:54px;
-margin-bottom:25px;
-}
-
-.cta p{
-max-width:800px;
-margin:auto;
-margin-bottom:40px;
-color:#ddd;
-font-size:20px;
-line-height:1.7;
+.contact h2{
+    color:white;
 }
 
 footer{
-background:#080808;
-padding:60px 20px;
-text-align:center;
-border-top:1px solid #1f1f1f;
+    background:#000;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
-
-footer p{
-margin-bottom:12px;
-color:#999;
-}
-
-footer a{
-color:#caa55b;
-text-decoration:none;
-}
-
-.disclaimer{
-margin-top:30px;
-font-size:13px;
-line-height:1.7;
-max-width:900px;
-margin-inline:auto;
-color:#777;
-}
-
-@media(max-width:980px){
-
-.hero-grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:42px;
-}
-
-.section-title h2{
-font-size:36px;
-}
-
-.cta h2{
-font-size:38px;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<div class="topbar">
-✔ Loja Oficial • ✔ Envio para Todo Brasil • ✔ Compra 100% Segura
+<header>
+<div class="container">
+
+<div class="logo">
+<h1>Relojoaria, Joalheria e Ótica Rubi</h1>
+<p>Desde 1989 oferecendo qualidade e confiança</p>
 </div>
+
+<nav>
+<a href="#servicos">Serviços</a>
+<a href="#empresa">Empresa</a>
+<a href="#atividades">Atividades</a>
+<a href="#contato">Contato</a>
+</nav>
+
+</div>
+</header>
 
 <section class="hero">
-
-<div class="container">
-
-<div class="hero-grid">
-
-<div>
-
-<div class="badge">
-✂ TESOURAS PREMIUM PROFISSIONAIS
-</div>
-
-<h1>
-Precisão, Corte e
-<span>Qualidade Profissional</span>
-Para Seu Trabalho
-</h1>
-
-<p>
-Tesouras profissionais desenvolvidas para barbeiros, cabeleireiros e especialistas que exigem máxima precisão, conforto e durabilidade no dia a dia.
-</p>
-
-<a href="#comprar" class="btn">
-QUERO GARANTIR A MINHA
-</a>
-
-</div>
-
-<div class="form-box" id="comprar">
-
-<h2>Receba Nossa Oferta</h2>
-
-<p>
-Preencha seus dados para atendimento especializado.
-</p>
-
-<form>
-
-<input type="text" placeholder="Seu nome completo" required>
-
-<input type="email" placeholder="Seu melhor e-mail" required>
-
-<input type="tel" placeholder="Seu WhatsApp" required>
-
-<button type="submit">
-SOLICITAR ATENDIMENTO
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
+<h2>Tradição, Elegância e Precisão</h2>
+<p>Relógios, joias, ótica e assistência especializada em Santa Terezinha de Itaipu - PR</p>
 </section>
 
-<section class="features">
-
+<section id="servicos" class="section">
 <div class="container">
 
 <div class="section-title">
-
-<h2>Diferenciais Das Nossas Tesouras</h2>
-
-<p>
-Performance premium para profissionais exigentes.
-</p>
-
+<h2>Principais Serviços</h2>
 </div>
 
-<div class="grid">
+<div class="services">
 
 <div class="card">
-<h3>Aço Inoxidável Premium</h3>
-<p>
-Alta resistência e longa durabilidade para uso profissional intenso.
-</p>
+<h3>⌚ Relojoaria</h3>
+<p>Venda, manutenção e reparação de relógios nacionais e importados.</p>
 </div>
 
 <div class="card">
-<h3>Corte Ultra Preciso</h3>
-<p>
-Lâminas afiadas para acabamento profissional e máxima precisão.
-</p>
+<h3>💎 Joalheria</h3>
+<p>Joias, bijuterias, pedras preciosas e serviços de lapidação.</p>
 </div>
 
 <div class="card">
-<h3>Conforto Ergonômico</h3>
-<p>
-Design confortável para reduzir fadiga durante longos períodos de uso.
-</p>
+<h3>👓 Ótica</h3>
+<p>Artigos ópticos, laboratório óptico e soluções visuais.</p>
 </div>
 
 <div class="card">
-<h3>Acabamento Luxuoso</h3>
-<p>
-Visual sofisticado e elegante para profissionais de alto padrão.
-</p>
+<h3>🔧 Assistência Técnica</h3>
+<p>Reparação de relógios e manutenção de equipamentos pessoais.</p>
+</div>
+
+<div class="card">
+<h3>✨ Ourivesaria</h3>
+<p>Fabricação e personalização de joias e artefatos preciosos.</p>
+</div>
+
+<div class="card">
+<h3>💍 Lapidação</h3>
+<p>Lapidação de gemas e trabalhos especializados com metais preciosos.</p>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
-<section class="gallery">
-
+<section id="empresa" class="section about">
 <div class="container">
 
 <div class="section-title">
+<h2>Sobre a Empresa</h2>
+</div>
 
-<h2>Qualidade Que Impressiona</h2>
+<div class="info-grid">
 
-<p>
-Ferramentas criadas para elevar o nível do seu trabalho.
-</p>
+<div class="info-box">
+<h3>Dados Empresariais</h3>
+<p><strong>Razão Social:</strong> Gilberto J. Goetz Damke & Cia LTDA</p>
+<p><strong>Nome Fantasia:</strong> Relojoaria, Joalheria e Ótica Rubi</p>
+<p><strong>CNPJ:</strong> 81.443.574/0001-36</p>
+<p><strong>Abertura:</strong> 20/07/1989</p>
+<p><strong>Porte:</strong> Micro Empresa</p>
+<p><strong>Situação:</strong> Ativa</p>
+<p><strong>Capital Social:</strong> R$ 50.000,00</p>
+</div>
+
+<div class="info-box">
+<h3>Administração</h3>
+<p>Empresa administrada por:</p>
+<ul>
+<li>Eduardo Damke</li>
+<li>Gilberto Jose Goetz Damke</li>
+</ul>
+<br>
+<p>Qualificação do responsável:</p>
+<p>Sócio-Administrador</p>
+</div>
 
 </div>
 
-<div class="gallery-grid">
-
-<img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1522338140262-f46f5913618a?q=80&w=1200&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop">
-
 </div>
-
-</div>
-
 </section>
 
-<section class="testimonials">
-
+<section id="atividades" class="section">
 <div class="container">
 
 <div class="section-title">
+<h2>Atividades Realizadas</h2>
+</div>
 
-<h2>Quem Compra Recomenda</h2>
+<div class="services">
 
-<p>
-Profissionais satisfeitos em todo Brasil.
-</p>
+<div class="card">
+<h3>Comércio de Relógios</h3>
+<p>Venda de artigos de relojoaria.</p>
+</div>
+
+<div class="card">
+<h3>Comércio de Joias</h3>
+<p>Joias, bijuterias e pedras preciosas.</p>
+</div>
+
+<div class="card">
+<h3>Artigos Ópticos</h3>
+<p>Produtos e serviços ópticos.</p>
+</div>
+
+<div class="card">
+<h3>Laboratório Óptico</h3>
+<p>Serviços especializados para lentes e armações.</p>
+</div>
+
+<div class="card">
+<h3>Metalurgia de Metais Preciosos</h3>
+<p>Processamento e acabamento de metais nobres.</p>
+</div>
+
+<div class="card">
+<h3>Lapidação de Gemas</h3>
+<p>Tratamento e valorização de pedras preciosas.</p>
+</div>
+
+<div class="card">
+<h3>Artigos Fotográficos</h3>
+<p>Venda de produtos fotográficos e acessórios.</p>
+</div>
+
+<div class="card">
+<h3>Equipamentos de Informática</h3>
+<p>Comércio varejista e atacadista de informática.</p>
+</div>
 
 </div>
 
-<div class="grid">
-
-<div class="testimonial">
-<p>
-“Qualidade absurda. Corte extremamente preciso e confortável.”
-</p>
-<strong>— Rafael Mendes</strong>
 </div>
-
-<div class="testimonial">
-<p>
-“Melhor tesoura que já usei no salão. Acabamento premium.”
-</p>
-<strong>— Juliana Costa</strong>
-</div>
-
-<div class="testimonial">
-<p>
-“Entrega rápida e produto impecável. Vale cada centavo.”
-</p>
-<strong>— Bruno Almeida</strong>
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<section class="cta">
-
+<section id="contato" class="section contact">
 <div class="container">
 
-<h2>
-Eleve Seu Nível Profissional
-</h2>
+<div class="section-title">
+<h2>Contato</h2>
+</div>
 
-<p>
-Garanta agora uma tesoura premium desenvolvida para profissionais que levam qualidade a sério.
-</p>
+<div class="info-grid">
 
-<a href="#comprar" class="btn">
-COMPRAR AGORA
-</a>
+<div class="info-box">
+<h3>Telefone</h3>
+<p>(45) 3541-1486</p>
+</div>
+
+<div class="info-box">
+<h3>Endereço</h3>
+<p>Rua Primeiro de Maio, 290 - Sala</p>
+<p>Centro</p>
+<p>Santa Terezinha de Itaipu - PR</p>
+<p>CEP: 85875-000</p>
+</div>
 
 </div>
 
+</div>
 </section>
 
 <footer>
-
-<p>
-© 2026 Tesouras Premium Brasil — Todos os direitos reservados.
-</p>
-
-<p>
-TESOURAS PREMIUM COMÉRCIO DIGITAL LTDA
-</p>
-
-<p>
-CNPJ: 48.721.963/0001-81
-</p>
-
-<p>
-contato@tesouraspremium.com.br
-</p>
-
-<p>
-Rua Comercial Exemplo, 150 — São Paulo/SP
-</p>
-
-<p>
-<a href="#">Política de Privacidade</a> |
-<a href="#">Termos de Uso</a>
-</p>
-
-<div class="disclaimer">
-
-Este site não possui vínculo com Facebook™, Instagram™ ou Google™. Todas as marcas registradas pertencem aos seus respectivos proprietários. Os resultados podem variar conforme utilização e experiência profissional.
-
-</div>
-
+<p>© 2025 Relojoaria, Joalheria e Ótica Rubi - Todos os direitos reservados.</p>
 </footer>
 
 </body>
 </html>
+```
