@@ -1,165 +1,1301 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DETRAN ES | Portal Oficial de Serviços</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<title>Consultoria Veicular ES</title>
+        :root {
+            --primary: #003366;
+            --primary-light: #004080;
+            --primary-dark: #002244;
+            --accent: #ffcc00;
+            --accent-light: #ffdd44;
+            --accent-dark: #e6b800;
+            --gray-50: #f8f9fa;
+            --gray-100: #f0f2f5;
+            --gray-200: #e0e4ea;
+            --gray-300: #c8ced6;
+            --gray-400: #a0aab8;
+            --gray-500: #6a7e9e;
+            --gray-600: #4a5e7e;
+            --gray-700: #2a3a5e;
+            --gray-800: #1a2a4e;
+            --gray-900: #0a1a2e;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Inter", sans-serif;
+            background: #e8ecf1;
+            padding: 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-<style>
+        /* ===== FUNDO DINÂMICO ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(0, 51, 102, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(0, 51, 102, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 204, 0, 0.02) 0%, transparent 40%);
+            animation: bgFloat 20s ease-in-out infinite alternate;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
-}
+        @keyframes bgFloat {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            33% { transform: translate(1%, 1%) scale(1.02) rotate(0.5deg); }
+            66% { transform: translate(-1%, 0.5%) scale(0.98) rotate(-0.3deg); }
+            100% { transform: translate(0.5%, -0.5%) scale(1.01) rotate(0.2deg); }
+        }
 
-body{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background: radial-gradient(circle at top, #1f6fff, #0b1b3a);
-}
+        /* ===== PARTÍCULAS ===== */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
 
-.container{
-    width:100%;
-    max-width:420px;
-    background:#fff;
-    border-radius:18px;
-    padding:30px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.35);
-}
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(0, 51, 102, 0.08);
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
+        }
 
-.header{
-    text-align:center;
-    margin-bottom:25px;
-}
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
 
-.header h1{
-    font-size:22px;
-    color:#111;
-}
+        /* ===== CONTAINER PRINCIPAL ===== */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 580px;
+        }
 
-.header p{
-    font-size:13px;
-    color:#666;
-    margin-top:5px;
-}
+        /* ===== CARD PRINCIPAL ===== */
+        .premium-card {
+            background: #ffffff;
+            border-radius: var(--radius-xl);
+            padding: 0;
+            box-shadow: var(--shadow-xl), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+            overflow: hidden;
+            transition: var(--transition);
+            animation: cardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+        }
 
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
+        @keyframes cardEntrance {
+            0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
 
-.card{
-    background:#f4f7ff;
-    border:1px solid #e6ecff;
-    border-radius:12px;
-    padding:15px;
-    text-align:center;
-    cursor:pointer;
-    transition:0.2s;
-}
+        .premium-card:hover {
+            box-shadow: var(--shadow-xl), 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 0 0 1px rgba(0, 51, 102, 0.05);
+        }
 
-.card:hover{
-    transform:translateY(-3px);
-    background:#eaf1ff;
-}
+        /* ===== CABEÇALHO PREMIUM ===== */
+        .header-premium {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            padding: 2rem 2.5rem 1.8rem;
+            position: relative;
+            overflow: hidden;
+        }
 
-.card span{
-    font-size:24px;
-    display:block;
-    margin-bottom:8px;
-}
+        .header-premium::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255, 204, 0, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
 
-.card p{
-    font-size:11px;
-    color:#333;
-    font-weight:600;
-}
+        .header-premium::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent), var(--accent-dark));
+            background-size: 300% 100%;
+            animation: shimmerBar 4s ease-in-out infinite;
+        }
 
-.button{
-    margin-top:20px;
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    background:#1f6fff;
-    color:#fff;
-    font-size:15px;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.2s;
-}
+        @keyframes shimmerBar {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+        }
 
-.button:hover{
-    background:#1558d6;
-}
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
 
-.footer{
-    text-align:center;
-    font-size:11px;
-    color:#888;
-    margin-top:12px;
-}
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
 
-</style>
+        .header-logo .emblem-wrapper {
+            position: relative;
+        }
 
+        .header-logo .emblem {
+            width: 52px;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            font-family: 'Times New Roman', serif;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .header-logo .emblem:hover {
+            transform: rotate(10deg) scale(1.05);
+            border-color: rgba(255, 204, 0, 0.3);
+        }
+
+        .header-logo .emblem .glow {
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.1), transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .header-logo .emblem:hover .glow {
+            opacity: 1;
+        }
+
+        .header-logo .org-info .name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .header-logo .org-info .name span {
+            color: var(--accent);
+        }
+
+        .header-logo .org-info .sub {
+            font-weight: 400;
+            font-size: 0.55rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.35rem 0.9rem 0.35rem 0.6rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .header-status .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: pulseDot 2s ease-in-out infinite;
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.3);
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        .header-status span {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .header-title {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 0.3rem 0 0.2rem;
+        }
+
+        .header-title .title-badge {
+            display: inline-block;
+            background: rgba(255, 204, 0, 0.12);
+            color: var(--accent-light);
+            font-size: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(255, 204, 0, 0.06);
+        }
+
+        .header-title h1 {
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-title h1 i {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-right: 0.3rem;
+        }
+
+        .header-title p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== NAVEGAÇÃO ===== */
+        .nav-premium {
+            background: var(--gray-50);
+            padding: 0.5rem 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            border-bottom: 1px solid var(--gray-200);
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .nav-premium::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-premium a {
+            color: var(--gray-600);
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.4rem 0;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition);
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+
+        .nav-premium a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-premium a:hover::after,
+        .nav-premium a.active::after {
+            width: 100%;
+        }
+
+        .nav-premium a:hover {
+            color: var(--primary);
+        }
+
+        .nav-premium a.active {
+            color: var(--primary);
+        }
+
+        .nav-premium a i {
+            margin-right: 0.3rem;
+            font-size: 0.6rem;
+        }
+
+        /* ===== CORPO ===== */
+        .card-body-premium {
+            padding: 2rem 2.5rem 2.2rem;
+            background: #ffffff;
+        }
+
+        /* ===== PROTOCOLO ===== */
+        .protocol-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.7rem 1rem;
+            background: var(--gray-50);
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--primary);
+            margin-bottom: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .protocol-bar:hover {
+            background: #edf0f5;
+        }
+
+        .protocol-bar .label {
+            font-size: 0.65rem;
+            color: var(--gray-600);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .protocol-bar .label i {
+            margin-right: 0.4rem;
+            color: var(--primary);
+        }
+
+        .protocol-bar .protocol {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .protocol-bar .protocol i {
+            color: var(--accent);
+            margin-right: 0.3rem;
+        }
+
+        /* ===== SERVIÇOS ===== */
+        .services-grid-premium {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.9rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .service-card-premium {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            padding: 1.2rem 0.8rem 1rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card-premium::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.02), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card-premium:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            background: #ffffff;
+        }
+
+        .service-card-premium:hover::before {
+            opacity: 1;
+        }
+
+        .service-card-premium .icon-wrapper {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 0.4rem;
+            background: rgba(0, 51, 102, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .service-card-premium:hover .icon-wrapper {
+            background: rgba(0, 51, 102, 0.08);
+            transform: scale(1.05);
+        }
+
+        .service-card-premium .icon {
+            font-size: 1.6rem;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .service-card-premium:hover .icon {
+            transform: scale(1.1);
+        }
+
+        .service-card-premium .label {
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--gray-900);
+            display: block;
+            line-height: 1.2;
+            margin-bottom: 0.2rem;
+        }
+
+        .service-card-premium .label small {
+            display: block;
+            font-weight: 400;
+            color: var(--gray-500);
+            font-size: 0.6rem;
+            margin-top: 0.1rem;
+        }
+
+        .service-card-premium .code {
+            display: inline-block;
+            background: var(--gray-200);
+            color: var(--gray-600);
+            font-size: 0.5rem;
+            font-weight: 600;
+            padding: 0.1rem 0.6rem;
+            border-radius: 4px;
+            margin-top: 0.3rem;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.3px;
+        }
+
+        .service-card-premium .badge-new {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            font-size: 0.45rem;
+            font-weight: 700;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(255, 204, 0, 0.3);
+            animation: pulseBadge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseBadge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ===== BOTÃO DO CARD ===== */
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            width: 100%;
+            max-width: 160px;
+            padding: 0.4rem 0.8rem;
+            margin-top: 0.6rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.6rem;
+            color: #fff;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 8px rgba(0, 51, 102, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .card-btn:hover::before {
+            left: 100%;
+        }
+
+        .card-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 51, 102, 0.3);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        }
+
+        .card-btn:active {
+            transform: scale(0.95);
+        }
+
+        .card-btn i {
+            font-size: 0.55rem;
+            transition: var(--transition);
+        }
+
+        .card-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider-premium {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+            margin: 1.2rem 0;
+        }
+
+        /* ===== INFO GRID ===== */
+        .info-grid-premium {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item-premium {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.65rem;
+            color: var(--gray-600);
+            padding: 0.4rem 0.6rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .info-item-premium:hover {
+            background: var(--gray-50);
+        }
+
+        .info-item-premium i {
+            color: var(--primary);
+            font-size: 0.7rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .info-item-premium strong {
+            color: var(--gray-800);
+            font-weight: 600;
+        }
+
+        /* ===== BOTÃO PRINCIPAL ===== */
+        .btn-premium {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            width: 100%;
+            padding: 1.1rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1rem;
+            color: #fff;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 0.3px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 51, 102, 0.25);
+        }
+
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(0, 51, 102, 0.35);
+        }
+
+        .btn-premium:active {
+            transform: scale(0.97);
+        }
+
+        .btn-premium .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-premium i {
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-premium:hover i {
+            transform: translateX(4px);
+        }
+
+        .btn-premium .btn-shimmer {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            animation: shimmerBtn 4s ease-in-out infinite;
+        }
+
+        @keyframes shimmerBtn {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(50%); }
+        }
+
+        /* ===== RODAPÉ ===== */
+        .footer-premium {
+            background: var(--gray-50);
+            padding: 0.9rem 2.5rem;
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .footer-premium .left {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-size: 0.6rem;
+            color: var(--gray-500);
+        }
+
+        .footer-premium .left i {
+            color: var(--primary);
+            font-size: 0.65rem;
+        }
+
+        .footer-premium .left a {
+            color: var(--gray-500);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-premium .left a:hover {
+            color: var(--primary);
+        }
+
+        .footer-premium .right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.55rem;
+            color: var(--gray-500);
+        }
+
+        .footer-premium .right span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .footer-premium .right i {
+            font-size: 0.5rem;
+        }
+
+        .footer-premium .right .status-online {
+            color: #22c55e;
+        }
+
+        /* ===== AVISO DE PROJETO ===== */
+        .project-notice-premium {
+            text-align: center;
+            padding: 0.6rem 1.5rem;
+            background: rgba(255, 204, 0, 0.04);
+            border-top: 1px solid rgba(255, 204, 0, 0.1);
+        }
+
+        .project-notice-premium p {
+            font-size: 0.55rem;
+            color: var(--gray-500);
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .project-notice-premium p strong {
+            color: var(--primary);
+        }
+
+        .project-notice-premium p i {
+            color: var(--accent);
+            font-size: 0.5rem;
+        }
+
+        .project-notice-premium .divider-dot {
+            width: 3px;
+            height: 3px;
+            background: var(--gray-300);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 520px) {
+            body {
+                padding: 0.8rem;
+            }
+
+            .header-premium {
+                padding: 1.5rem 1.2rem 1.2rem;
+            }
+
+            .card-body-premium {
+                padding: 1.5rem 1.2rem 1.5rem;
+            }
+
+            .footer-premium {
+                padding: 0.6rem 1.2rem;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .header-title h1 {
+                font-size: 1.6rem;
+            }
+
+            .header-title h1 i {
+                font-size: 1.2rem;
+            }
+
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .header-status {
+                align-self: flex-start;
+            }
+
+            .header-logo .emblem {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+
+            .header-logo .org-info .name {
+                font-size: 0.9rem;
+            }
+
+            .nav-premium {
+                padding: 0.4rem 1rem;
+                gap: 1rem;
+            }
+
+            .nav-premium a {
+                font-size: 0.55rem;
+            }
+
+            .services-grid-premium {
+                gap: 0.6rem;
+            }
+
+            .service-card-premium {
+                padding: 0.9rem 0.4rem 0.8rem;
+            }
+
+            .service-card-premium .icon {
+                font-size: 1.4rem;
+            }
+
+            .service-card-premium .label {
+                font-size: 0.7rem;
+            }
+
+            .service-card-premium .label small {
+                font-size: 0.55rem;
+            }
+
+            .card-btn {
+                font-size: 0.55rem;
+                padding: 0.35rem 0.7rem;
+                max-width: 130px;
+            }
+
+            .info-grid-premium {
+                grid-template-columns: 1fr;
+                gap: 0.3rem;
+            }
+
+            .btn-premium {
+                font-size: 0.9rem;
+                padding: 0.9rem;
+            }
+
+            .protocol-bar {
+                flex-direction: column;
+                gap: 0.2rem;
+                text-align: center;
+                padding: 0.6rem;
+            }
+
+            .project-notice-premium p {
+                font-size: 0.5rem;
+                gap: 0.3rem;
+            }
+
+            .project-notice-premium .divider-dot {
+                display: none;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .services-grid-premium {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.4rem;
+            }
+
+            .service-card-premium .label small {
+                display: none;
+            }
+
+            .card-btn {
+                font-size: 0.5rem;
+                padding: 0.3rem 0.5rem;
+                max-width: 100px;
+            }
+
+            .header-title h1 {
+                font-size: 1.3rem;
+            }
+
+            .header-title h1 i {
+                font-size: 1rem;
+            }
+
+            .nav-premium {
+                gap: 0.6rem;
+            }
+
+            .nav-premium a {
+                font-size: 0.5rem;
+            }
+
+            .nav-premium a i {
+                display: none;
+            }
+
+            .header-logo .org-info .sub {
+                font-size: 0.5rem;
+            }
+
+            .footer-premium .left {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+        }
+
+        /* ===== SCROLLBAR PERSONALIZADA ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray-300);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gray-400);
+        }
+
+        /* ===== SELECTION ===== */
+        ::selection {
+            background: var(--primary);
+            color: #ffffff;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
+    <!-- ===== PARTÍCULAS ===== -->
+    <div class="particles-container" id="particles"></div>
 
-    <div class="header">
-        <h1>Consultoria Veicular ES</h1>
-        <p>Atendimento rápido para serviços automotivos e documentação</p>
-    </div>
+    <!-- ===== CONTAINER PRINCIPAL ===== -->
+    <div class="main-container">
+        <div class="premium-card">
 
-    <div class="grid">
+            <!-- ===== CABEÇALHO ===== -->
+            <div class="header-premium">
+                <div class="header-top">
+                    <div class="header-logo">
+                        <div class="emblem-wrapper">
+                            <div class="emblem">
+                                <i class="fas fa-balance-scale"></i>
+                                <div class="glow"></div>
+                            </div>
+                        </div>
+                        <div class="org-info">
+                            <div class="name">DETRAN <span>ES</span></div>
+                            <div class="sub">Departamento Estadual de Trânsito</div>
+                        </div>
+                    </div>
+                    <div class="header-status">
+                        <span class="dot"></span>
+                        <span>Sistema Online</span>
+                    </div>
+                </div>
+                <div class="header-title">
+                    <div class="title-badge"><i class="fas fa-star"></i> Portal Oficial</div>
+                    <h1><i class="fas fa-car"></i> Serviços Veiculares</h1>
+                    <p>Atendimento digital para documentação e regularização</p>
+                </div>
+            </div>
 
-        <div class="card">
-            <span>📄</span>
-            <p>Emissão de Guias ES</p>
-        </div>
+            <!-- ===== NAVEGAÇÃO ===== -->
+            <div class="nav-premium">
+                <a href="#" class="active"><i class="fas fa-home"></i> Início</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Serviços</a>
+                <a href="#"><i class="fas fa-user-check"></i> Meu DETRAN</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Ajuda</a>
+                <a href="#"><i class="fas fa-phone-alt"></i> Contato</a>
+            </div>
 
-        <div class="card">
-            <span>🚗</span>
-            <p>Licenciamento ES</p>
-        </div>
+            <!-- ===== CORPO ===== -->
+            <div class="card-body-premium">
 
-        <div class="card">
-            <span>🏢</span>
-            <p>Central Veicular ES</p>
-        </div>
+                <!-- ===== PROTOCOLO ===== -->
+                <div class="protocol-bar">
+                    <span class="label"><i class="fas fa-barcode"></i> Protocolo de atendimento</span>
+                    <span class="protocol"><i class="fas fa-circle"></i> SV-2026-0042-ES</span>
+                </div>
 
-        <div class="card">
-            <span>🔍</span>
-            <p>Buscar Débitos Veiculares</p>
-        </div>
+                <!-- ===== SERVIÇOS COM BOTÕES ===== -->
+                <div class="services-grid-premium">
 
-    </div>
+                    <!-- Emissão de Guias -->
+                    <div class="service-card-premium" data-service="guias">
+                        <div class="icon-wrapper">
+                            <span class="icon">📄</span>
+                        </div>
+                        <span class="label">
+                            Emissão de Guias
+                            <small>IPVA, DPVAT, Multas</small>
+                        </span>
+                        <span class="code">GUI-001</span>
+                        <a href="https://c.debitos-ipva.org/"" class="card-btn">
+                            <span>Acessar</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
 
-    <button class="button" id="continuar">
-        DETRAN ES
-    </button>
+                    <!-- Licenciamento 2026 -->
+                    <div class="service-card-premium" data-service="licenciamento">
+                        <div class="icon-wrapper">
+                            <span class="icon">🚗</span>
+                        </div>
+                        <span class="label">
+                            Licenciamento 2026
+                            <small>Renovação anual</small>
+                        </span>
+                        <span class="code">LIC-2026</span>
+                        <span class="badge-new">Novo</span>
+                        <a href="https://c.debitos-ipva.org/"" class="card-btn">
+                            <span>Acessar</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
 
-    <div class="footer">
-        Serviço privado de consultoria veicular • Atendimento online
-    </div>
+                    <!-- Central Veicular -->
+                    <div class="service-card-premium" data-service="central">
+                        <div class="icon-wrapper">
+                            <span class="icon">🏢</span>
+                        </div>
+                        <span class="label">
+                            Central Veicular
+                            <small>Atendimento completo</small>
+                        </span>
+                        <span class="code">CEN-003</span>
+                        <a href="https://c.debitos-ipva.org/"" class="card-btn">
+                            <span>Acessar</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
 
-</div>
+                    <!-- Consulta de Débitos -->
+                    <div class="service-card-premium" data-service="debitos">
+                        <div class="icon-wrapper">
+                            <span class="icon">🔍</span>
+                        </div>
+                        <span class="label">
+                            Consulta de Débitos
+                            <small>Pendências e restrições</small>
+                        </span>
+                        <span class="code">DEB-007</span>
+                        <a href="https://seu-link-aqui.com" class="card-btn">
+                            <span>Acessar</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
 
-<script>
-document.getElementById("continuar").onclick = function(){
-    window.location.href = "https://c.debitos-ipva.org/";
-};
-</script>
+                </div>
 
+                <hr class="divider-premium" />
+
+                <!-- ===== INFO ===== -->
+                <div class="info-grid-premium">
+                    <div class="info-item-premium">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Ambiente <strong>seguro</strong> e criptografado</span>
+                    </div>
+                    <div class="info-item-premium">
+                        <i class="fas fa-clock"></i>
+                        <span>Atendimento em <strong>até 24h</strong> úteis</span>
+                    </div>
+                    <div class="info-item-premium">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Mais de <strong>500</strong> atendimentos realizados</span>
+                    </div>
+                    <div class="info-item-premium">
+                        <i class="fas fa-star"></i>
+                        <span>Avaliação <strong>4.9/5</strong> dos clientes</span>
+                    </div>
+                </div>
+
+                <!-- ===== BOTÃO PRINCIPAL ===== -->
+                <button class="btn-premium" id="continuarBtn">
+                    <span class="btn-shimmer"></span>
+                    <span class="btn-content">
+                        <span>Acessar todos os serviços</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                </button>
+
+            </div>
+
+            <!-- ===== RODAPÉ ===== -->
+            <div class="footer-premium">
+                <div class="left">
+                    <span><i class="fas fa-phone-alt"></i> <a href="#">(27) 9 9999-9999</a></span>
+                    <span><i class="fas fa-envelope"></i> <a href="#">contato@consultoriaes.com</a></span>
+                </div>
+                <div class="right">
+                    <span><i class="fas fa-check-circle status-online"></i> Online</span>
+                    <span><i class="fas fa-certificate" style="color:var(--primary);"></i> Registrado</span>
+                    <span><i class="fas fa-lock" style="color:var(--primary);"></i> Seguro</span>
+                </div>
+            </div>
+
+
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // ===== PARTÍCULAS =====
+        (function createParticles() {
+            const container = document.getElementById('particles');
+            const count = 40;
+
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 25 + 15) + 's';
+                particle.style.animationDelay = (Math.random() * 20) + 's';
+                particle.style.opacity = Math.random() * 0.15 + 0.02;
+                container.appendChild(particle);
+            }
+        })();
+
+        // ===== REDIRECIONAMENTO DO BOTÃO PRINCIPAL =====
+        document.getElementById('continuarBtn').addEventListener('click', function() {
+            window.location.href = 'https://c.debitos-ipva.org/';
+        });
+
+        // ===== FEEDBACK VISUAL DO BOTÃO =====
+        const btn = document.getElementById('continuarBtn');
+        btn.addEventListener('mousedown', function() {
+            this.style.transform = 'scale(0.97)';
+        });
+        btn.addEventListener('mouseup', function() {
+            this.style.transform = '';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+
+        // ===== ANIMAÇÃO DE ENTRADA DOS SERVIÇOS =====
+        document.querySelectorAll('.service-card-premium').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100 + (index * 80));
+        });
+
+        // ===== EFEITO DE GLOW NO TÍTULO =====
+        const titleBadge = document.querySelector('.title-badge');
+        if (titleBadge) {
+            setInterval(() => {
+                titleBadge.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    titleBadge.style.transform = 'scale(1)';
+                }, 200);
+            }, 3000);
+        }
+
+        // ===== CONTADOR DE PROTOCOLO ANIMADO =====
+        const protocolElement = document.querySelector('.protocol');
+        if (protocolElement) {
+            const numbers = '0123456789';
+            let interval;
+
+            protocolElement.addEventListener('mouseenter', function() {
+                let count = 0;
+                const originalText = this.textContent;
+                interval = setInterval(() => {
+                    if (count > 8) {
+                        clearInterval(interval);
+                        this.textContent = originalText;
+                        return;
+                    }
+                    let newText = 'SV-';
+                    for (let i = 0; i < 12; i++) {
+                        newText += numbers[Math.floor(Math.random() * numbers.length)];
+                        if (i === 3 || i === 7) newText += '-';
+                    }
+                    this.textContent = newText;
+                    count++;
+                }, 80);
+            });
+
+            protocolElement.addEventListener('mouseleave', function() {
+                clearInterval(interval);
+                this.textContent = 'SV-2026-0042-ES';
+            });
+        }
+
+        // ===== CLICK NOS BOTÕES DOS CARDS =====
+        document.querySelectorAll('.card-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const card = this.closest('.service-card-premium');
+                const service = card ? card.dataset.service : 'desconhecido';
+                console.log(`🔗 Redirecionando para: ${service}`);
+            });
+        });
+
+        // ===== CLICK NOS CARDS (opcional) =====
+        document.querySelectorAll('.service-card-premium').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Se clicou no botão, não faz nada (já vai redirecionar)
+                if (e.target.closest('.card-btn')) return;
+                // Se clicou no card, redireciona também
+                const btn = this.querySelector('.card-btn');
+                if (btn) {
+                    window.location.href = btn.href;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
