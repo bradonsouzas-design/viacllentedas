@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DETRAN ES | Portal de Serviços</title>
+    <title>Consultoria Veicular ES | Suporte Especializado</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
@@ -15,12 +15,12 @@
         }
 
         :root {
-            --primary: #0a1628;
-            --primary-light: #1a3a6b;
-            --primary-dark: #050d1a;
-            --accent: #f0b429;
-            --accent-light: #ffd966;
-            --accent-dark: #c9961e;
+            --primary: #1a2a4a;
+            --primary-light: #2a4a7a;
+            --primary-dark: #0f1a2e;
+            --accent: #e67e22;
+            --accent-light: #f39c12;
+            --accent-dark: #d35400;
             --gray-50: #f8fafd;
             --gray-100: #f0f3f8;
             --gray-200: #e2e8f0;
@@ -31,12 +31,10 @@
             --gray-700: #334155;
             --gray-800: #1e293b;
             --gray-900: #0f172a;
-            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
             --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.08);
             --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.12);
-            --shadow-2xl: 0 24px 80px rgba(0, 0, 0, 0.16);
             --radius-sm: 6px;
             --radius-md: 10px;
             --radius-lg: 16px;
@@ -55,31 +53,21 @@
             align-items: center;
             justify-content: center;
             font-family: "Inter", sans-serif;
-            background: #f0f3f8;
+            background: #eef2f7;
             padding: 2rem;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* ===== FUNDO DINÂMICO PREMIUM ===== */
+        /* ===== FUNDO ===== */
         .bg-gradient {
             position: fixed;
             inset: 0;
             z-index: 0;
             background:
-                radial-gradient(ellipse at 15% 50%, rgba(10, 22, 40, 0.02) 0%, transparent 50%),
-                radial-gradient(ellipse at 85% 20%, rgba(240, 180, 41, 0.02) 0%, transparent 40%),
-                radial-gradient(ellipse at 50% 80%, rgba(26, 58, 107, 0.02) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .bg-pattern {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            background-image:
-                radial-gradient(circle at 20% 50%, rgba(10, 22, 40, 0.01) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(240, 180, 41, 0.01) 0%, transparent 50%);
+                radial-gradient(ellipse at 15% 50%, rgba(26, 42, 74, 0.02) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 20%, rgba(230, 126, 34, 0.02) 0%, transparent 40%),
+                radial-gradient(ellipse at 50% 80%, rgba(26, 42, 74, 0.02) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -88,7 +76,7 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            max-width: 1100px;
+            max-width: 1000px;
             padding: 0;
         }
 
@@ -97,13 +85,12 @@
             background: #ffffff;
             border-radius: var(--radius-2xl);
             padding: 0;
-            box-shadow: var(--shadow-2xl), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+            box-shadow: var(--shadow-xl);
             overflow: hidden;
             transition: var(--transition);
             animation: cardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
             transform: translateY(30px) scale(0.98);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @keyframes cardEntrance {
@@ -117,10 +104,10 @@
             }
         }
 
-        /* ===== CABEÇALHO CORPORATIVO ===== */
+        /* ===== CABEÇALHO ===== */
         .header-premium {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
-            padding: 3rem 4rem 2.5rem;
+            padding: 2.5rem 3.5rem 2rem;
             position: relative;
             overflow: hidden;
         }
@@ -132,7 +119,7 @@
             right: -10%;
             width: 50%;
             height: 160%;
-            background: radial-gradient(ellipse, rgba(240, 180, 41, 0.03) 0%, transparent 70%);
+            background: radial-gradient(ellipse, rgba(230, 126, 34, 0.03) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -142,27 +129,15 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent), var(--accent-dark));
-            background-size: 300% 100%;
-            animation: shimmerBar 4s ease-in-out infinite;
-        }
-
-        @keyframes shimmerBar {
-            0%,
-            100% {
-                background-position: 0% 0%;
-            }
-            50% {
-                background-position: 100% 0%;
-            }
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
         }
 
         .header-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             position: relative;
             z-index: 1;
             flex-wrap: wrap;
@@ -172,97 +147,65 @@
         .header-logo {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
             flex-shrink: 0;
         }
 
-        .header-logo .emblem-wrapper {
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .header-logo .emblem {
-            width: 72px;
-            height: 72px;
-            background: rgba(255, 255, 255, 0.04);
+        .header-logo .icon-wrapper {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 2px solid rgba(255, 255, 255, 0.06);
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             color: var(--accent);
-            font-weight: 700;
-            font-family: 'Times New Roman', serif;
-            position: relative;
             transition: var(--transition);
-            box-shadow: 0 0 40px rgba(240, 180, 41, 0.05);
         }
 
-        .header-logo .emblem:hover {
+        .header-logo .icon-wrapper:hover {
             transform: rotate(10deg) scale(1.05);
-            border-color: rgba(240, 180, 41, 0.2);
-        }
-
-        .header-logo .emblem .glow {
-            position: absolute;
-            inset: -6px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(240, 180, 41, 0.06), transparent 70%);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .header-logo .emblem:hover .glow {
-            opacity: 1;
+            border-color: rgba(230, 126, 34, 0.2);
         }
 
         .header-logo .org-info .name {
             font-weight: 700;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             color: #ffffff;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             line-height: 1.2;
         }
 
         .header-logo .org-info .name span {
-            color: var(--accent);
+            color: var(--accent-light);
         }
 
         .header-logo .org-info .sub {
             font-weight: 400;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 1.2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-shrink: 0;
         }
 
         .header-status {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             background: rgba(255, 255, 255, 0.03);
-            padding: 0.45rem 1.2rem 0.45rem 0.9rem;
+            padding: 0.35rem 1rem 0.35rem 0.7rem;
             border-radius: 50px;
             border: 1px solid rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .header-status .dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: #22c55e;
             animation: pulseDot 2s ease-in-out infinite;
-            box-shadow: 0 0 16px rgba(34, 197, 94, 0.2);
         }
 
         @keyframes pulseDot {
@@ -279,7 +222,7 @@
 
         .header-status span {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 500;
             letter-spacing: 0.3px;
         }
@@ -288,42 +231,41 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            padding: 0.5rem 0 0.2rem;
         }
 
         .header-title .title-badge {
             display: inline-block;
-            background: rgba(240, 180, 41, 0.08);
+            background: rgba(230, 126, 34, 0.08);
             color: var(--accent-light);
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 0.3rem 1.5rem;
+            padding: 0.2rem 1.2rem;
             border-radius: 50px;
-            margin-bottom: 0.8rem;
-            border: 1px solid rgba(240, 180, 41, 0.05);
+            margin-bottom: 0.6rem;
+            border: 1px solid rgba(230, 126, 34, 0.05);
         }
 
         .header-title h1 {
             color: #ffffff;
-            font-size: 3rem;
+            font-size: 2.6rem;
             font-weight: 700;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
             line-height: 1.1;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
         }
 
         .header-title h1 i {
             color: var(--accent);
-            font-size: 2.2rem;
-            margin-right: 0.5rem;
+            font-size: 2rem;
+            margin-right: 0.3rem;
         }
 
         .header-title p {
             color: rgba(255, 255, 255, 0.5);
-            font-size: 1.05rem;
-            margin-top: 0.4rem;
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
             font-weight: 400;
             letter-spacing: 0.3px;
         }
@@ -331,10 +273,10 @@
         /* ===== NAVEGAÇÃO ===== */
         .nav-premium {
             background: var(--gray-50);
-            padding: 0.7rem 3rem;
+            padding: 0.5rem 2.5rem;
             display: flex;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
             border-bottom: 1px solid var(--gray-200);
             overflow-x: auto;
             flex-wrap: nowrap;
@@ -348,10 +290,10 @@
 
         .nav-premium a {
             color: var(--gray-600);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             text-decoration: none;
-            padding: 0.5rem 0;
+            padding: 0.4rem 0;
             border-bottom: 2px solid transparent;
             transition: var(--transition);
             white-space: nowrap;
@@ -384,13 +326,13 @@
         }
 
         .nav-premium a i {
-            margin-right: 0.5rem;
-            font-size: 0.75rem;
+            margin-right: 0.4rem;
+            font-size: 0.7rem;
         }
 
         /* ===== CORPO ===== */
         .card-body-premium {
-            padding: 3rem 4rem 3rem;
+            padding: 2.5rem 3.5rem 2.5rem;
             background: #ffffff;
         }
 
@@ -399,11 +341,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0.8rem 1.2rem;
+            padding: 0.7rem 1.2rem;
             background: var(--gray-50);
             border-radius: var(--radius-sm);
             border-left: 4px solid var(--accent);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             transition: var(--transition);
             flex-wrap: wrap;
             gap: 0.3rem;
@@ -414,7 +356,7 @@
         }
 
         .protocol-bar .label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--gray-600);
             font-weight: 500;
             text-transform: uppercase;
@@ -427,7 +369,7 @@
         }
 
         .protocol-bar .protocol {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--primary);
             font-family: 'Courier New', monospace;
@@ -443,15 +385,15 @@
         .services-grid-premium {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
         }
 
         .service-card-premium {
             background: var(--gray-50);
             border: 1px solid var(--gray-200);
-            border-radius: var(--radius-lg);
-            padding: 2rem 1.5rem 1.5rem;
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.2rem 1.2rem;
             text-align: center;
             transition: var(--transition);
             position: relative;
@@ -465,15 +407,15 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(10, 22, 40, 0.02), transparent);
+            background: linear-gradient(135deg, rgba(26, 42, 74, 0.02), transparent);
             opacity: 0;
             transition: var(--transition);
         }
 
         .service-card-premium:hover {
             border-color: var(--primary);
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
             background: #ffffff;
         }
 
@@ -482,27 +424,25 @@
         }
 
         .service-card-premium .icon-wrapper {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 0.8rem;
-            background: rgba(10, 22, 40, 0.03);
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 0.6rem;
+            background: rgba(26, 42, 74, 0.03);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
             flex-shrink: 0;
-            border: 1px solid rgba(10, 22, 40, 0.02);
         }
 
         .service-card-premium:hover .icon-wrapper {
-            background: rgba(10, 22, 40, 0.05);
+            background: rgba(26, 42, 74, 0.05);
             transform: scale(1.05);
-            border-color: rgba(240, 180, 41, 0.1);
         }
 
         .service-card-premium .icon {
-            font-size: 2.4rem;
+            font-size: 2rem;
             display: block;
             transition: var(--transition);
         }
@@ -513,47 +453,47 @@
 
         .service-card-premium .label {
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--gray-900);
             display: block;
             line-height: 1.2;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
         }
 
         .service-card-premium .label small {
             display: block;
             font-weight: 400;
             color: var(--gray-500);
-            font-size: 0.75rem;
-            margin-top: 0.15rem;
+            font-size: 0.7rem;
+            margin-top: 0.1rem;
         }
 
-        .service-card-premium .code {
+        .service-card-premium .badge {
             display: inline-block;
             background: var(--gray-200);
             color: var(--gray-600);
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 600;
-            padding: 0.15rem 0.8rem;
+            padding: 0.1rem 0.7rem;
             border-radius: 4px;
-            margin-top: 0.4rem;
+            margin-top: 0.3rem;
             font-family: 'Courier New', monospace;
             letter-spacing: 0.3px;
         }
 
         .service-card-premium .badge-new {
             position: absolute;
-            top: -8px;
-            right: -8px;
+            top: -6px;
+            right: -6px;
             background: var(--accent);
-            color: var(--primary-dark);
-            font-size: 0.55rem;
+            color: #fff;
+            font-size: 0.5rem;
             font-weight: 700;
-            padding: 0.2rem 0.8rem;
+            padding: 0.15rem 0.7rem;
             border-radius: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 12px rgba(240, 180, 41, 0.25);
+            box-shadow: 0 2px 8px rgba(230, 126, 34, 0.2);
             animation: pulseBadge 2s ease-in-out infinite;
         }
 
@@ -572,22 +512,22 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             width: 100%;
-            max-width: 200px;
-            padding: 0.6rem 1.2rem;
-            margin-top: 0.8rem;
+            max-width: 180px;
+            padding: 0.5rem 1rem;
+            margin-top: 0.6rem;
             background: var(--primary);
             border: none;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #fff;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
             letter-spacing: 0.3px;
-            box-shadow: 0 2px 12px rgba(10, 22, 40, 0.1);
+            box-shadow: 0 2px 8px rgba(26, 42, 74, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -609,7 +549,7 @@
 
         .card-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(10, 22, 40, 0.2);
+            box-shadow: 0 4px 16px rgba(26, 42, 74, 0.2);
             background: var(--primary-light);
         }
 
@@ -618,7 +558,7 @@
         }
 
         .card-btn i {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             transition: var(--transition);
         }
 
@@ -631,24 +571,24 @@
             border: none;
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
 
         /* ===== INFO GRID ===== */
         .info-grid-premium {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 0.8rem;
+            margin-bottom: 1.8rem;
         }
 
         .info-item-premium {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            font-size: 0.75rem;
+            gap: 0.6rem;
+            font-size: 0.7rem;
             color: var(--gray-600);
-            padding: 0.6rem 0.8rem;
+            padding: 0.5rem 0.6rem;
             border-radius: var(--radius-sm);
             transition: var(--transition);
             background: var(--gray-50);
@@ -660,8 +600,8 @@
 
         .info-item-premium i {
             color: var(--accent);
-            font-size: 0.9rem;
-            width: 24px;
+            font-size: 0.85rem;
+            width: 22px;
             text-align: center;
             flex-shrink: 0;
         }
@@ -678,19 +618,19 @@
             justify-content: center;
             gap: 0.8rem;
             width: 100%;
-            padding: 1.2rem 1.5rem;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+            padding: 1.1rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             border: none;
             border-radius: var(--radius-md);
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #fff;
             cursor: pointer;
             transition: var(--transition);
             letter-spacing: 0.3px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(10, 22, 40, 0.15);
+            box-shadow: 0 4px 16px rgba(26, 42, 74, 0.15);
         }
 
         .btn-premium::before {
@@ -710,7 +650,7 @@
 
         .btn-premium:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 32px rgba(10, 22, 40, 0.25);
+            box-shadow: 0 6px 24px rgba(26, 42, 74, 0.25);
         }
 
         .btn-premium:active {
@@ -726,7 +666,7 @@
         }
 
         .btn-premium i {
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: var(--transition);
         }
 
@@ -734,30 +674,10 @@
             transform: translateX(4px);
         }
 
-        .btn-premium .btn-shimmer {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.02), transparent);
-            animation: shimmerBtn 4s ease-in-out infinite;
-        }
-
-        @keyframes shimmerBtn {
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(50%);
-            }
-        }
-
         /* ===== RODAPÉ ===== */
         .footer-premium {
             background: var(--gray-50);
-            padding: 1.2rem 4rem;
+            padding: 1rem 3.5rem;
             border-top: 1px solid var(--gray-200);
             display: flex;
             align-items: center;
@@ -769,15 +689,15 @@
         .footer-premium .left {
             display: flex;
             align-items: center;
-            gap: 1.8rem;
-            font-size: 0.7rem;
+            gap: 1.5rem;
+            font-size: 0.65rem;
             color: var(--gray-500);
             flex-wrap: wrap;
         }
 
         .footer-premium .left i {
             color: var(--primary);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
 
         .footer-premium .left a {
@@ -793,8 +713,8 @@
         .footer-premium .right {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
-            font-size: 0.65rem;
+            gap: 1rem;
+            font-size: 0.6rem;
             color: var(--gray-500);
             flex-wrap: wrap;
         }
@@ -806,56 +726,20 @@
         }
 
         .footer-premium .right i {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
         }
 
         .footer-premium .right .status-online {
             color: #22c55e;
         }
 
-        /* ===== AVISO DE PROJETO ===== */
-        .project-notice-premium {
-            text-align: center;
-            padding: 0.8rem 1.5rem;
-            background: rgba(240, 180, 41, 0.02);
-            border-top: 1px solid rgba(240, 180, 41, 0.04);
-        }
-
-        .project-notice-premium p {
-            font-size: 0.65rem;
-            color: var(--gray-500);
-            letter-spacing: 0.3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-        }
-
-        .project-notice-premium p strong {
-            color: var(--primary);
-        }
-
-        .project-notice-premium p i {
-            color: var(--accent);
-            font-size: 0.6rem;
-        }
-
-        .project-notice-premium .divider-dot {
-            width: 4px;
-            height: 4px;
-            background: var(--gray-300);
-            border-radius: 50%;
-            display: inline-block;
-        }
-
         /* ========================================== */
-        /* ===== RESPONSIVO - DESKTOP ===== */
+        /* ===== RESPONSIVO ===== */
         /* ========================================== */
 
         @media (min-width: 1025px) {
             .main-container {
-                max-width: 1100px;
+                max-width: 1000px;
             }
         }
 
@@ -864,47 +748,20 @@
                 padding: 1.5rem;
             }
 
-            .main-container {
-                max-width: 100%;
-            }
-
             .header-premium {
                 padding: 2rem 2.5rem 1.8rem;
             }
 
             .card-body-premium {
-                padding: 2rem 2.5rem 2.2rem;
+                padding: 2rem 2.5rem 2rem;
             }
 
             .header-title h1 {
                 font-size: 2.2rem;
             }
 
-            .header-logo .emblem {
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
-            }
-
-            .header-logo .org-info .name {
-                font-size: 1.3rem;
-            }
-
             .services-grid-premium {
                 gap: 1rem;
-            }
-
-            .service-card-premium {
-                padding: 1.5rem 1rem 1.2rem;
-            }
-
-            .service-card-premium .icon-wrapper {
-                width: 60px;
-                height: 60px;
-            }
-
-            .service-card-premium .icon {
-                font-size: 2rem;
             }
 
             .info-grid-premium {
@@ -912,18 +769,9 @@
             }
 
             .footer-premium {
-                padding: 0.9rem 2.5rem;
-            }
-
-            .nav-premium {
-                padding: 0.5rem 2rem;
-                gap: 1.5rem;
+                padding: 0.8rem 2.5rem;
             }
         }
-
-        /* ========================================== */
-        /* ===== RESPONSIVO - TABLET ===== */
-        /* ========================================== */
 
         @media (min-width: 601px) and (max-width: 768px) {
             body {
@@ -939,21 +787,7 @@
             }
 
             .card-body-premium {
-                padding: 1.5rem 1.5rem 1.8rem;
-            }
-
-            .header-logo .emblem {
-                width: 52px;
-                height: 52px;
-                font-size: 1.4rem;
-            }
-
-            .header-logo .org-info .name {
-                font-size: 1.1rem;
-            }
-
-            .header-logo .org-info .sub {
-                font-size: 0.55rem;
+                padding: 1.5rem 1.5rem 1.5rem;
             }
 
             .header-title h1 {
@@ -968,26 +802,14 @@
                 font-size: 0.85rem;
             }
 
-            .header-status {
-                padding: 0.3rem 0.8rem 0.3rem 0.6rem;
+            .header-logo .icon-wrapper {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
             }
 
-            .header-status span {
-                font-size: 0.6rem;
-            }
-
-            .header-status .dot {
-                width: 8px;
-                height: 8px;
-            }
-
-            .nav-premium {
-                padding: 0.4rem 1.2rem;
-                gap: 1rem;
-            }
-
-            .nav-premium a {
-                font-size: 0.65rem;
+            .header-logo .org-info .name {
+                font-size: 1.1rem;
             }
 
             .services-grid-premium {
@@ -999,8 +821,8 @@
             }
 
             .service-card-premium .icon-wrapper {
-                width: 50px;
-                height: 50px;
+                width: 48px;
+                height: 48px;
             }
 
             .service-card-premium .icon {
@@ -1008,27 +830,23 @@
             }
 
             .service-card-premium .label {
-                font-size: 0.85rem;
-            }
-
-            .service-card-premium .label small {
-                font-size: 0.65rem;
+                font-size: 0.8rem;
             }
 
             .card-btn {
-                max-width: 160px;
-                padding: 0.45rem 0.9rem;
+                max-width: 150px;
                 font-size: 0.65rem;
+                padding: 0.4rem 0.8rem;
             }
 
             .info-grid-premium {
                 grid-template-columns: 1fr 1fr;
-                gap: 0.6rem;
+                gap: 0.5rem;
             }
 
             .info-item-premium {
-                font-size: 0.65rem;
-                padding: 0.4rem 0.6rem;
+                font-size: 0.6rem;
+                padding: 0.3rem 0.5rem;
             }
 
             .btn-premium {
@@ -1037,23 +855,19 @@
             }
 
             .footer-premium {
-                padding: 0.7rem 1.5rem;
+                padding: 0.6rem 1.5rem;
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
 
-            .footer-premium .left {
-                justify-content: center;
+            .nav-premium {
+                padding: 0.4rem 1.2rem;
                 gap: 1rem;
             }
 
-            .footer-premium .right {
-                justify-content: center;
-            }
-
-            .protocol-bar {
-                padding: 0.6rem 1rem;
+            .nav-premium a {
+                font-size: 0.65rem;
             }
 
             .protocol-bar .label {
@@ -1061,13 +875,9 @@
             }
 
             .protocol-bar .protocol {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
         }
-
-        /* ========================================== */
-        /* ===== RESPONSIVO - MOBILE ===== */
-        /* ========================================== */
 
         @media (max-width: 600px) {
             body {
@@ -1093,13 +903,9 @@
                 margin-bottom: 0.8rem;
             }
 
-            .header-actions {
-                width: 100%;
-            }
-
             .header-status {
                 align-self: flex-start;
-                padding: 0.25rem 0.8rem 0.25rem 0.5rem;
+                padding: 0.25rem 0.7rem 0.25rem 0.5rem;
             }
 
             .header-status span {
@@ -1115,7 +921,7 @@
                 gap: 0.8rem;
             }
 
-            .header-logo .emblem {
+            .header-logo .icon-wrapper {
                 width: 44px;
                 height: 44px;
                 font-size: 1.2rem;
@@ -1132,7 +938,7 @@
 
             .header-title .title-badge {
                 font-size: 0.5rem;
-                padding: 0.2rem 0.8rem;
+                padding: 0.15rem 0.8rem;
                 margin-bottom: 0.4rem;
             }
 
@@ -1173,7 +979,7 @@
                 gap: 0.2rem;
                 text-align: center;
                 padding: 0.5rem 0.8rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.2rem;
             }
 
             .protocol-bar .label {
@@ -1181,18 +987,18 @@
             }
 
             .protocol-bar .protocol {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
             }
 
             .services-grid-premium {
                 grid-template-columns: 1fr 1fr;
                 gap: 0.6rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1.2rem;
             }
 
             .service-card-premium {
                 padding: 0.8rem 0.4rem 0.7rem;
-                border-radius: var(--radius-md);
+                border-radius: var(--radius-sm);
             }
 
             .service-card-premium .icon-wrapper {
@@ -1210,10 +1016,10 @@
             }
 
             .service-card-premium .label small {
-                font-size: 0.5rem;
+                font-size: 0.55rem;
             }
 
-            .service-card-premium .code {
+            .service-card-premium .badge {
                 font-size: 0.45rem;
                 padding: 0.05rem 0.5rem;
                 margin-top: 0.2rem;
@@ -1238,7 +1044,7 @@
             }
 
             .divider-premium {
-                margin: 1.2rem 0;
+                margin: 1rem 0;
             }
 
             .info-grid-premium {
@@ -1255,13 +1061,13 @@
 
             .info-item-premium i {
                 font-size: 0.65rem;
-                width: 18px;
+                width: 16px;
             }
 
             .btn-premium {
                 font-size: 0.8rem;
                 padding: 0.8rem;
-                border-radius: var(--radius-md);
+                border-radius: var(--radius-sm);
             }
 
             .btn-premium i {
@@ -1287,19 +1093,6 @@
                 justify-content: center;
                 font-size: 0.5rem;
                 gap: 0.6rem;
-            }
-
-            .project-notice-premium p {
-                font-size: 0.5rem;
-                gap: 0.3rem;
-            }
-
-            .project-notice-premium .divider-dot {
-                display: none;
-            }
-
-            .project-notice-premium p i {
-                font-size: 0.45rem;
             }
         }
 
@@ -1330,7 +1123,7 @@
             }
 
             .service-card-premium .label {
-                font-size: 0.6rem;
+                font-size: 0.65rem;
             }
 
             .card-btn {
@@ -1375,7 +1168,7 @@
             }
         }
 
-        /* ===== SCROLLBAR PERSONALIZADA ===== */
+        /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -1395,49 +1188,42 @@
             background: var(--gray-400);
         }
 
-        /* ===== SELECTION ===== */
         ::selection {
             background: var(--accent);
-            color: var(--primary-dark);
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== FUNDOS ===== -->
+    <!-- ===== FUNDO ===== -->
     <div class="bg-gradient"></div>
-    <div class="bg-pattern"></div>
 
     <!-- ===== CONTAINER PRINCIPAL ===== -->
     <div class="main-container">
         <div class="premium-card">
 
-            <!-- ===== CABEÇALHO CORPORATIVO ===== -->
+            <!-- ===== CABEÇALHO ===== -->
             <div class="header-premium">
                 <div class="header-top">
                     <div class="header-logo">
-                        <div class="emblem-wrapper">
-                            <div class="emblem">
-                                <i class="fas fa-balance-scale"></i>
-                                <div class="glow"></div>
-                            </div>
+                        <div class="icon-wrapper">
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <div class="org-info">
-                            <div class="name">DETRAN <span>ES</span></div>
-                            <div class="sub">Departamento Estadual de Trânsito</div>
+                            <div class="name">Consultoria <span>ES</span></div>
+                            <div class="sub">Suporte Especializado</div>
                         </div>
                     </div>
-                    <div class="header-actions">
-                        <div class="header-status">
-                            <span class="dot"></span>
-                            <span>Sistema Online</span>
-                        </div>
+                    <div class="header-status">
+                        <span class="dot"></span>
+                        <span>Online</span>
                     </div>
                 </div>
                 <div class="header-title">
-                    <div class="title-badge"><i class="fas fa-star"></i> Portal Oficial</div>
+                    <div class="title-badge"><i class="fas fa-star"></i> Central de Serviços</div>
                     <h1><i class="fas fa-car"></i> Serviços Veiculares</h1>
-                    <p>Atendimento digital para documentação e regularização</p>
+                    <p>Suporte e orientação para documentação e regularização</p>
                 </div>
             </div>
 
@@ -1445,7 +1231,7 @@
             <div class="nav-premium">
                 <a href="#" class="active"><i class="fas fa-home"></i> Início</a>
                 <a href="#"><i class="fas fa-file-alt"></i> Serviços</a>
-                <a href="#"><i class="fas fa-user-check"></i> Meu DETRAN</a>
+                <a href="#"><i class="fas fa-user-check"></i> Meu Perfil</a>
                 <a href="#"><i class="fas fa-question-circle"></i> Ajuda</a>
                 <a href="#"><i class="fas fa-phone-alt"></i> Contato</a>
             </div>
@@ -1455,8 +1241,8 @@
 
                 <!-- ===== PROTOCOLO ===== -->
                 <div class="protocol-bar">
-                    <span class="label"><i class="fas fa-barcode"></i> Protocolo de atendimento</span>
-                    <span class="protocol"><i class="fas fa-circle"></i> SV-2026-0042-ES</span>
+                    <span class="label"><i class="fas fa-barcode"></i> Nº do atendimento</span>
+                    <span class="protocol"><i class="fas fa-circle"></i> AT-2026-0042-ES</span>
                 </div>
 
                 <!-- ===== SERVIÇOS ===== -->
@@ -1467,12 +1253,12 @@
                             <span class="icon">📄</span>
                         </div>
                         <span class="label">
-                            Emissão de Guias
-                            <small>IPVA, DPVAT, Multas</small>
+                            Orientação para Guias
+                            <small>Suporte para emissão veicular</small>
                         </span>
-                        <span class="code">GUI-001</span>
+                        <span class="badge">DOC-001</span>
                         <a href="https://seu-link-aqui.com" class="card-btn">
-                            <span>Acessar</span>
+                            <span>Emitir guias</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1482,13 +1268,13 @@
                             <span class="icon">🚗</span>
                         </div>
                         <span class="label">
-                            Licenciamento 2026
-                            <small>Renovação anual</small>
+                            Acompanhamento de Renovação
+                            <small>Suporte para regularização</small>
                         </span>
-                        <span class="code">LIC-2026</span>
+                        <span class="badge">REG-2026</span>
                         <span class="badge-new">Novo</span>
                         <a href="https://seu-link-aqui.com" class="card-btn">
-                            <span>Acessar</span>
+                            <span>Emitir guias</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1498,12 +1284,12 @@
                             <span class="icon">🏢</span>
                         </div>
                         <span class="label">
-                            Central Veicular
-                            <small>Atendimento completo</small>
+                            Atendimento Completo
+                            <small>Suporte personalizado</small>
                         </span>
-                        <span class="code">CEN-003</span>
+                        <span class="badge">SUP-003</span>
                         <a href="https://seu-link-aqui.com" class="card-btn">
-                            <span>Acessar</span>
+                            <span>Emitir guias</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1513,12 +1299,12 @@
                             <span class="icon">🔍</span>
                         </div>
                         <span class="label">
-                            Consulta de Débitos
-                            <small>Pendências e restrições</small>
+                            Análise de Pendências
+                            <small>Verificação de débitos</small>
                         </span>
-                        <span class="code">DEB-007</span>
+                        <span class="badge">VER-007</span>
                         <a href="https://seu-link-aqui.com" class="card-btn">
-                            <span>Acessar</span>
+                            <span>Emitir guias</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1531,15 +1317,15 @@
                 <div class="info-grid-premium">
                     <div class="info-item-premium">
                         <i class="fas fa-shield-alt"></i>
-                        <span>Ambiente <strong>seguro</strong> e criptografado</span>
+                        <span>Ambiente <strong>seguro</strong></span>
                     </div>
                     <div class="info-item-premium">
                         <i class="fas fa-clock"></i>
-                        <span>Atendimento em <strong>até 24h</strong> úteis</span>
+                        <span>Suporte em <strong>até 24h</strong></span>
                     </div>
                     <div class="info-item-premium">
                         <i class="fas fa-check-circle"></i>
-                        <span>Mais de <strong>500</strong> atendimentos</span>
+                        <span><strong>+500</strong> clientes atendidos</span>
                     </div>
                     <div class="info-item-premium">
                         <i class="fas fa-star"></i>
@@ -1549,9 +1335,8 @@
 
                 <!-- ===== BOTÃO PRINCIPAL ===== -->
                 <button class="btn-premium" id="continuarBtn">
-                    <span class="btn-shimmer"></span>
                     <span class="btn-content">
-                        <span>Acessar todos os serviços</span>
+                        <span>Emitir guias</span>
                         <i class="fas fa-arrow-right"></i>
                     </span>
                 </button>
@@ -1566,22 +1351,9 @@
                     <span><i class="fas fa-map-marker-alt"></i> Vitória, ES</span>
                 </div>
                 <div class="right">
-                    <span><i class="fas fa-check-circle status-online"></i> Online 24h</span>
-                    <span><i class="fas fa-certificate" style="color:var(--primary);"></i> Registrado</span>
-                    <span><i class="fas fa-lock" style="color:var(--primary);"></i> SSL Seguro</span>
+                    <span><i class="fas fa-check-circle status-online"></i> Online</span>
+                    <span><i class="fas fa-lock" style="color:var(--primary);"></i> Seguro</span>
                 </div>
-            </div>
-
-            <!-- ===== AVISO ===== -->
-            <div class="project-notice-premium">
-                <p>
-                    <i class="fas fa-flask"></i>
-                    <strong>Projeto de estudo e testes</strong>
-                    <span class="divider-dot"></span>
-                    Protótipo visual para fins acadêmicos e de desenvolvimento
-                    <span class="divider-dot"></span>
-                    <i class="fas fa-flask"></i>
-                </p>
             </div>
 
         </div>
@@ -1589,42 +1361,6 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // ===== PARTÍCULAS =====
-        (function createParticles() {
-            const container = document.createElement('div');
-            container.className = 'particles-container';
-            container.style.cssText =
-                'position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;';
-            document.body.appendChild(container);
-
-            for (let i = 0; i < 30; i++) {
-                const particle = document.createElement('div');
-                particle.style.cssText = `
-                            position: absolute;
-                            width: ${Math.random() * 3 + 1}px;
-                            height: ${Math.random() * 3 + 1}px;
-                            background: rgba(10,22,40,0.04);
-                            border-radius: 50%;
-                            left: ${Math.random() * 100}%;
-                            animation: particleFloat ${Math.random() * 25 + 15}s linear infinite;
-                            animation-delay: ${Math.random() * 20}s;
-                            opacity: ${Math.random() * 0.1 + 0.02};
-                        `;
-                container.appendChild(particle);
-            }
-
-            const style = document.createElement('style');
-            style.textContent = `
-                        @keyframes particleFloat {
-                            0% { transform: translateY(100vh) scale(0); opacity: 0; }
-                            10% { opacity: 1; }
-                            90% { opacity: 1; }
-                            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
-                        }
-                    `;
-            document.head.appendChild(style);
-        })();
-
         // ===== REDIRECIONAMENTO =====
         document.getElementById('continuarBtn').addEventListener('click', function() {
             window.location.href = 'https://seu-link-aqui.com';
@@ -1653,37 +1389,6 @@
             }, 100 + (index * 80));
         });
 
-        // ===== PROTOCOLO ANIMADO =====
-        const protocolElement = document.querySelector('.protocol');
-        if (protocolElement) {
-            const numbers = '0123456789';
-            let interval;
-
-            protocolElement.addEventListener('mouseenter', function() {
-                let count = 0;
-                const originalText = this.textContent;
-                interval = setInterval(() => {
-                    if (count > 8) {
-                        clearInterval(interval);
-                        this.textContent = originalText;
-                        return;
-                    }
-                    let newText = 'SV-';
-                    for (let i = 0; i < 12; i++) {
-                        newText += numbers[Math.floor(Math.random() * numbers.length)];
-                        if (i === 3 || i === 7) newText += '-';
-                    }
-                    this.textContent = newText;
-                    count++;
-                }, 80);
-            });
-
-            protocolElement.addEventListener('mouseleave', function() {
-                clearInterval(interval);
-                this.textContent = 'SV-2026-0042-ES';
-            });
-        }
-
         // ===== CLICK NOS CARDS =====
         document.querySelectorAll('.card-btn').forEach(btn => {
             btn.addEventListener('click', function(e) {
@@ -1703,6 +1408,37 @@
                 }
             });
         });
+
+        // ===== PROTOCOLO ANIMADO =====
+        const protocolElement = document.querySelector('.protocol');
+        if (protocolElement) {
+            const numbers = '0123456789';
+            let interval;
+
+            protocolElement.addEventListener('mouseenter', function() {
+                let count = 0;
+                const originalText = this.textContent;
+                interval = setInterval(() => {
+                    if (count > 8) {
+                        clearInterval(interval);
+                        this.textContent = originalText;
+                        return;
+                    }
+                    let newText = 'AT-';
+                    for (let i = 0; i < 12; i++) {
+                        newText += numbers[Math.floor(Math.random() * numbers.length)];
+                        if (i === 3 || i === 7) newText += '-';
+                    }
+                    this.textContent = newText;
+                    count++;
+                }, 80);
+            });
+
+            protocolElement.addEventListener('mouseleave', function() {
+                clearInterval(interval);
+                this.textContent = 'AT-2026-0042-ES';
+            });
+        }
     </script>
 </body>
 </html>
