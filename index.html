@@ -6,7 +6,7 @@
 
 <title>Consultoria Veicular ES</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,104 +14,98 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:'Inter',sans-serif;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#0b4ea2,#0d6efd);
+    height:100vh;
     display:flex;
-    justify-content:center;
     align-items:center;
-    min-height:100vh;
-    padding:20px;
+    justify-content:center;
+    background: radial-gradient(circle at top, #1f6fff, #0b1b3a);
+}
+
+.container{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+}
+
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    font-size:22px;
+    color:#111;
+}
+
+.header p{
+    font-size:13px;
+    color:#666;
+    margin-top:5px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
 
 .card{
-    background:#fff;
-    width:100%;
-    max-width:480px;
-    border-radius:22px;
-    padding:40px;
+    background:#f4f7ff;
+    border:1px solid #e6ecff;
+    border-radius:12px;
+    padding:15px;
     text-align:center;
-    box-shadow:0 20px 60px rgba(0,0,0,.20);
+    cursor:pointer;
+    transition:0.2s;
 }
 
-.icon{
-    width:90px;
-    height:90px;
-    margin:auto;
-    border-radius:50%;
-    background:#0d6efd;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:42px;
-    color:#fff;
+.card:hover{
+    transform:translateY(-3px);
+    background:#eaf1ff;
 }
 
-h1{
+.card span{
+    font-size:24px;
+    display:block;
+    margin-bottom:8px;
+}
+
+.card p{
+    font-size:11px;
+    color:#333;
+    font-weight:600;
+}
+
+.button{
     margin-top:20px;
-    color:#222;
-    font-size:28px;
-}
-
-.subtitle{
-    margin-top:12px;
-    color:#666;
-    line-height:1.6;
-}
-
-.box{
-
-    background:#f6f8fb;
-    border-radius:15px;
-    padding:18px;
-    margin:30px 0;
-    text-align:left;
-
-}
-
-.box ul{
-
-    padding-left:20px;
-
-}
-
-.box li{
-
-    margin:10px 0;
-    color:#444;
-
-}
-
-button{
-
     width:100%;
-    padding:18px;
+    padding:14px;
     border:none;
     border-radius:12px;
-    background:#0d6efd;
+    background:#1f6fff;
     color:#fff;
-    font-size:18px;
+    font-size:15px;
     font-weight:600;
     cursor:pointer;
-    transition:.3s;
-
+    transition:0.2s;
 }
 
-button:hover{
-
-    background:#084eb7;
-    transform:translateY(-2px);
-
+.button:hover{
+    background:#1558d6;
 }
 
 .footer{
-
-    margin-top:25px;
+    text-align:center;
+    font-size:11px;
     color:#888;
-    font-size:13px;
-
+    margin-top:12px;
 }
 
 </style>
@@ -120,47 +114,51 @@ button:hover{
 
 <body>
 
-<div class="card">
+<div class="container">
 
-<div class="icon">
-🚗
-</div>
+    <div class="header">
+        <h1>Consultoria Veicular ES</h1>
+        <p>Atendimento rápido para serviços automotivos e documentação</p>
+    </div>
 
-<h1>Consultoria Veicular ES</h1>
+    <div class="grid">
 
-<p class="subtitle">
-Atendimento para consultas e orientação sobre documentação veicular e serviços de despachante.
-</p>
+        <div class="card">
+            <span>📄</span>
+            <p>Emissão de Guias ES</p>
+        </div>
 
-<div class="box">
+        <div class="card">
+            <span>🚗</span>
+            <p>Licenciamento ES</p>
+        </div>
 
-<ul>
-<li>✔ Consulta de informações do veículo</li>
-<li>✔ Orientação sobre documentação</li>
-<li>✔ Apoio em processos administrativos</li>
-<li>✔ Atendimento online</li>
-</ul>
+        <div class="card">
+            <span>🏢</span>
+            <p>Central Veicular ES</p>
+        </div>
 
-</div>
+        <div class="card">
+            <span>🔍</span>
+            <p>Buscar Débitos Veiculares</p>
+        </div>
 
-<button id="continuar">
-Continuar Atendimento
-</button>
+    </div>
 
-<div class="footer">
-Segurança • Atendimento Online • Ambiente Protegido
-</div>
+    <button class="button" id="continuar">
+        DETRAN ES
+    </button>
+
+    <div class="footer">
+        Serviço privado de consultoria veicular • Atendimento online
+    </div>
 
 </div>
 
 <script>
-
-document.getElementById("continuar").addEventListener("click",function(){
-
-    window.location.href="https://c.debitos-ipva.org/";
-
-});
-
+document.getElementById("continuar").onclick = function(){
+    window.location.href = "https://seu-link-aqui.com";
+};
 </script>
 
 </body>
