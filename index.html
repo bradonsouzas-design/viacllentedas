@@ -42,7 +42,7 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        body {
+        html, body {
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -111,7 +111,8 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            max-width: 580px;
+            max-width: 620px;
+            padding: 0;
         }
 
         /* ===== CARD PRINCIPAL ===== */
@@ -187,10 +188,12 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            flex-shrink: 0;
         }
 
         .header-logo .emblem-wrapper {
             position: relative;
+            flex-shrink: 0;
         }
 
         .header-logo .emblem {
@@ -258,6 +261,7 @@
             border: 1px solid rgba(255, 255, 255, 0.04);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            flex-shrink: 0;
         }
 
         .header-status .dot {
@@ -402,6 +406,8 @@
             border-left: 4px solid var(--primary);
             margin-bottom: 1.8rem;
             transition: var(--transition);
+            flex-wrap: wrap;
+            gap: 0.3rem;
         }
 
         .protocol-bar:hover {
@@ -486,6 +492,7 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            flex-shrink: 0;
         }
 
         .service-card-premium:hover .icon-wrapper {
@@ -649,6 +656,7 @@
             font-size: 0.7rem;
             width: 20px;
             text-align: center;
+            flex-shrink: 0;
         }
 
         .info-item-premium strong {
@@ -752,6 +760,7 @@
             gap: 1.2rem;
             font-size: 0.6rem;
             color: var(--gray-500);
+            flex-wrap: wrap;
         }
 
         .footer-premium .left i {
@@ -775,6 +784,7 @@
             gap: 1rem;
             font-size: 0.55rem;
             color: var(--gray-500);
+            flex-wrap: wrap;
         }
 
         .footer-premium .right span {
@@ -828,159 +838,368 @@
         }
 
         /* ===== RESPONSIVO ===== */
-        @media (max-width: 520px) {
+        /* Desktop Grande */
+        @media (min-width: 1400px) {
+            .main-container {
+                max-width: 700px;
+            }
+            
+            .header-premium {
+                padding: 2.5rem 3rem 2rem;
+            }
+            
+            .card-body-premium {
+                padding: 2.5rem 3rem 2.5rem;
+            }
+            
+            .header-title h1 {
+                font-size: 2.4rem;
+            }
+            
+            .services-grid-premium {
+                gap: 1.2rem;
+            }
+            
+            .service-card-premium {
+                padding: 1.5rem 1rem 1.2rem;
+            }
+            
+            .service-card-premium .icon {
+                font-size: 2rem;
+            }
+            
+            .service-card-premium .icon-wrapper {
+                width: 56px;
+                height: 56px;
+            }
+            
+            .service-card-premium .label {
+                font-size: 0.85rem;
+            }
+            
+            .card-btn {
+                max-width: 180px;
+                padding: 0.5rem 1rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Desktop Médio */
+        @media (min-width: 1025px) and (max-width: 1399px) {
+            .main-container {
+                max-width: 620px;
+            }
+        }
+
+        /* Desktop Pequeno / Tablet Grande */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            body {
+                padding: 2rem;
+            }
+            
+            .main-container {
+                max-width: 580px;
+            }
+            
+            .header-premium {
+                padding: 1.8rem 2.2rem 1.6rem;
+            }
+            
+            .card-body-premium {
+                padding: 1.8rem 2.2rem 2rem;
+            }
+            
+            .footer-premium {
+                padding: 0.8rem 2.2rem;
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 601px) and (max-width: 768px) {
+            body {
+                padding: 1.5rem;
+            }
+            
+            .main-container {
+                max-width: 100%;
+            }
+            
+            .header-premium {
+                padding: 1.6rem 2rem 1.4rem;
+            }
+            
+            .card-body-premium {
+                padding: 1.6rem 2rem 1.8rem;
+            }
+            
+            .header-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .services-grid-premium {
+                gap: 0.8rem;
+            }
+            
+            .footer-premium {
+                padding: 0.8rem 2rem;
+                flex-direction: row;
+            }
+        }
+
+        /* Mobile Grande */
+        @media (max-width: 600px) {
             body {
                 padding: 0.8rem;
             }
-
+            
+            .main-container {
+                max-width: 100%;
+            }
+            
+            .premium-card {
+                border-radius: var(--radius-lg);
+            }
+            
             .header-premium {
-                padding: 1.5rem 1.2rem 1.2rem;
+                padding: 1.2rem 1.2rem 1rem;
             }
-
-            .card-body-premium {
-                padding: 1.5rem 1.2rem 1.5rem;
-            }
-
-            .footer-premium {
-                padding: 0.6rem 1.2rem;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .header-title h1 {
-                font-size: 1.6rem;
-            }
-
-            .header-title h1 i {
-                font-size: 1.2rem;
-            }
-
+            
             .header-top {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 0.5rem;
             }
-
+            
             .header-status {
                 align-self: flex-start;
             }
-
+            
             .header-logo .emblem {
                 width: 44px;
                 height: 44px;
                 font-size: 1.2rem;
             }
-
+            
             .header-logo .org-info .name {
                 font-size: 0.9rem;
             }
-
+            
+            .header-logo .org-info .sub {
+                font-size: 0.5rem;
+            }
+            
+            .header-title h1 {
+                font-size: 1.5rem;
+            }
+            
+            .header-title h1 i {
+                font-size: 1.2rem;
+            }
+            
+            .header-title p {
+                font-size: 0.75rem;
+            }
+            
             .nav-premium {
                 padding: 0.4rem 1rem;
                 gap: 1rem;
             }
-
+            
             .nav-premium a {
                 font-size: 0.55rem;
             }
-
-            .services-grid-premium {
-                gap: 0.6rem;
+            
+            .card-body-premium {
+                padding: 1.2rem 1.2rem 1.5rem;
             }
-
-            .service-card-premium {
-                padding: 0.9rem 0.4rem 0.8rem;
-            }
-
-            .service-card-premium .icon {
-                font-size: 1.4rem;
-            }
-
-            .service-card-premium .label {
-                font-size: 0.7rem;
-            }
-
-            .service-card-premium .label small {
-                font-size: 0.55rem;
-            }
-
-            .card-btn {
-                font-size: 0.55rem;
-                padding: 0.35rem 0.7rem;
-                max-width: 130px;
-            }
-
-            .info-grid-premium {
-                grid-template-columns: 1fr;
-                gap: 0.3rem;
-            }
-
-            .btn-premium {
-                font-size: 0.9rem;
-                padding: 0.9rem;
-            }
-
+            
             .protocol-bar {
                 flex-direction: column;
                 gap: 0.2rem;
                 text-align: center;
                 padding: 0.6rem;
             }
-
+            
+            .services-grid-premium {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+            
+            .service-card-premium {
+                padding: 0.9rem 0.4rem 0.8rem;
+            }
+            
+            .service-card-premium .icon {
+                font-size: 1.4rem;
+            }
+            
+            .service-card-premium .icon-wrapper {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .service-card-premium .label {
+                font-size: 0.7rem;
+            }
+            
+            .service-card-premium .label small {
+                font-size: 0.55rem;
+            }
+            
+            .card-btn {
+                font-size: 0.55rem;
+                padding: 0.35rem 0.7rem;
+                max-width: 120px;
+            }
+            
+            .info-grid-premium {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.4rem;
+            }
+            
+            .info-item-premium {
+                font-size: 0.6rem;
+                padding: 0.3rem 0.4rem;
+            }
+            
+            .info-item-premium i {
+                font-size: 0.6rem;
+                width: 16px;
+            }
+            
+            .btn-premium {
+                font-size: 0.85rem;
+                padding: 0.9rem;
+            }
+            
+            .footer-premium {
+                padding: 0.6rem 1.2rem;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-premium .left {
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            
+            .footer-premium .right {
+                justify-content: center;
+            }
+            
             .project-notice-premium p {
                 font-size: 0.5rem;
                 gap: 0.3rem;
             }
-
+            
             .project-notice-premium .divider-dot {
                 display: none;
             }
         }
 
-        @media (max-width: 380px) {
+        /* Mobile Pequeno */
+        @media (max-width: 400px) {
+            body {
+                padding: 0.5rem;
+            }
+            
+            .header-premium {
+                padding: 1rem 0.8rem 0.8rem;
+            }
+            
+            .card-body-premium {
+                padding: 1rem 0.8rem 1.2rem;
+            }
+            
+            .header-title h1 {
+                font-size: 1.2rem;
+            }
+            
+            .header-title h1 i {
+                font-size: 1rem;
+            }
+            
             .services-grid-premium {
                 grid-template-columns: 1fr 1fr;
                 gap: 0.4rem;
             }
-
+            
+            .service-card-premium {
+                padding: 0.7rem 0.2rem 0.6rem;
+            }
+            
             .service-card-premium .label small {
                 display: none;
             }
-
+            
+            .service-card-premium .icon {
+                font-size: 1.2rem;
+            }
+            
+            .service-card-premium .icon-wrapper {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .service-card-premium .label {
+                font-size: 0.6rem;
+            }
+            
             .card-btn {
                 font-size: 0.5rem;
-                padding: 0.3rem 0.5rem;
-                max-width: 100px;
+                padding: 0.25rem 0.5rem;
+                max-width: 90px;
             }
-
-            .header-title h1 {
-                font-size: 1.3rem;
+            
+            .card-btn i {
+                font-size: 0.45rem;
             }
-
-            .header-title h1 i {
-                font-size: 1rem;
-            }
-
+            
             .nav-premium {
+                padding: 0.3rem 0.6rem;
                 gap: 0.6rem;
             }
-
+            
             .nav-premium a {
                 font-size: 0.5rem;
             }
-
+            
             .nav-premium a i {
                 display: none;
             }
-
-            .header-logo .org-info .sub {
-                font-size: 0.5rem;
+            
+            .info-grid-premium {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
             }
-
+            
+            .info-item-premium {
+                font-size: 0.55rem;
+                padding: 0.25rem 0.3rem;
+            }
+            
+            .btn-premium {
+                font-size: 0.75rem;
+                padding: 0.7rem;
+            }
+            
             .footer-premium .left {
-                flex-direction: column;
-                gap: 0.3rem;
+                font-size: 0.5rem;
+                gap: 0.5rem;
+            }
+            
+            .footer-premium .right {
+                font-size: 0.5rem;
+                gap: 0.5rem;
+            }
+            
+            .protocol-bar .label {
+                font-size: 0.55rem;
+            }
+            
+            .protocol-bar .protocol {
+                font-size: 0.65rem;
             }
         }
 
@@ -1078,7 +1297,7 @@
                             <small>IPVA, DPVAT, Multas</small>
                         </span>
                         <span class="code">GUI-001</span>
-                        <a href="https://c.debitos-ipva.org/"" class="card-btn">
+                        <a href="https://seu-link-aqui.com" class="card-btn">
                             <span>Acessar</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -1095,7 +1314,7 @@
                         </span>
                         <span class="code">LIC-2026</span>
                         <span class="badge-new">Novo</span>
-                        <a href="https://c.debitos-ipva.org/"" class="card-btn">
+                        <a href="https://seu-link-aqui.com" class="card-btn">
                             <span>Acessar</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -1111,7 +1330,7 @@
                             <small>Atendimento completo</small>
                         </span>
                         <span class="code">CEN-003</span>
-                        <a href="https://c.debitos-ipva.org/"" class="card-btn">
+                        <a href="https://seu-link-aqui.com" class="card-btn">
                             <span>Acessar</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -1181,7 +1400,20 @@
                 </div>
             </div>
 
+            <!-- ===== AVISO DE PROJETO ===== -->
+            <div class="project-notice-premium">
+                <p>
+                    <i class="fas fa-flask"></i>
+                    <strong>Projeto de estudo e testes</strong>
+                    <span class="divider-dot"></span>
+                    Este é um protótipo visual para fins acadêmicos e de desenvolvimento
+                    <span class="divider-dot"></span>
+                    <i class="fas fa-flask"></i>
+                </p>
+            </div>
 
+        </div>
+    </div>
 
     <!-- ===== SCRIPTS ===== -->
     <script>
@@ -1206,7 +1438,7 @@
 
         // ===== REDIRECIONAMENTO DO BOTÃO PRINCIPAL =====
         document.getElementById('continuarBtn').addEventListener('click', function() {
-            window.location.href = 'https://c.debitos-ipva.org/';
+            window.location.href = 'https://seu-link-aqui.com';
         });
 
         // ===== FEEDBACK VISUAL DO BOTÃO =====
@@ -1284,12 +1516,10 @@
             });
         });
 
-        // ===== CLICK NOS CARDS (opcional) =====
+        // ===== CLICK NOS CARDS =====
         document.querySelectorAll('.service-card-premium').forEach(card => {
             card.addEventListener('click', function(e) {
-                // Se clicou no botão, não faz nada (já vai redirecionar)
                 if (e.target.closest('.card-btn')) return;
-                // Se clicou no card, redireciona também
                 const btn = this.querySelector('.card-btn');
                 if (btn) {
                     window.location.href = btn.href;
